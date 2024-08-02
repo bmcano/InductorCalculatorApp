@@ -11,7 +11,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge() // TODO - check this out to see how it works for adding it to other apps
+        enableEdgeToEdge()
         setContent {
             InductanceCalculatorTheme {
                 Navigation(this)

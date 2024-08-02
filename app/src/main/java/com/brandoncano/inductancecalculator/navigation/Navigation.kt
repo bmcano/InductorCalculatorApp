@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.brandoncano.inductancecalculator.ui.screens.HomeScreen
 
 /**
  * Note: Keep each navigation route in alphabetical order
@@ -24,7 +25,7 @@ fun Navigation(context: Context) {
             enterTransition = { EnterTransition.None },
             exitTransition = { ExitTransition.None },
         ) {
-//            HomeScreen(context, navController)
+            HomeScreen(context, navController)
         }
     }
 }
