@@ -1,4 +1,4 @@
-package com.brandoncano.inductancecalculator
+package com.brandoncano.inductancecalculator.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

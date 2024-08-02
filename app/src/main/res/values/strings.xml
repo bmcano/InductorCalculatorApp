@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">InductanceCalculator</string>
+    <string name="app_name">Inductance Calculator</string>
     <!-- Content descriptions -->
     <string name="content_description_app_icon">App icon</string>
     <string name="content_description_menu_more">More</string>
