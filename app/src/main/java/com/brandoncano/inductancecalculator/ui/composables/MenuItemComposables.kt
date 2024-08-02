@@ -5,6 +5,7 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Cancel
 import androidx.compose.material.icons.outlined.Feedback
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.DropdownMenuItem
@@ -42,14 +43,14 @@ fun AboutAppMenuItem(navController: NavController, showMenu: MutableState<Boolea
     )
 }
 
-//@Composable
-//fun ClearSelectionsMenuItem(onClick: (() -> Unit)) {
-//    DropdownMenuItem(
-//        text = { MenuText(stringRes = R.string.menu_clear_selections) },
-//        onClick = onClick,
-//        leadingIcon = { MenuIcon(Icons.Outlined.Cancel) },
-//    )
-//}
+@Composable
+fun ClearSelectionsMenuItem(onClick: (() -> Unit)) {
+    DropdownMenuItem(
+        text = { MenuText(stringRes = R.string.menu_clear_selections) },
+        onClick = onClick,
+        leadingIcon = { MenuIcon(Icons.Outlined.Cancel) },
+    )
+}
 
 //@Composable
 //fun ColorToValueMenuItem(navController: NavController, showMenu: MutableState<Boolean>) {

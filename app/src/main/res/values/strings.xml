@@ -1,10 +1,22 @@
 <resources>
-    <string name="app_name">Inductance Calculator</string>
+    <!-- Activity title   -->
+    <string name="app_name">Inductor Calculator</string>
+    <string name="title_color_to_value">Color to Value</string>
+    <string name="title_value_to_color">Value to Color</string>
+    <!-- OutlinedTextField hints -->
+    <string name="hint_band_1">First band</string>
+    <string name="hint_band_2">Second band</string>
+    <string name="hint_band_3">Multiplier</string>
+    <string name="hint_band_4">Tolerance</string>
+    <string name="hint_inductance">Inductance</string>
+    <string name="hint_units">Units</string>
+    <string name="hint_smd_code">Code</string>
     <!-- Home screen/components text -->
     <string name="home_calculators_header_text">Calculators</string>
     <string name="home_button_color_to_value">Color to value</string>
     <string name="home_button_value_to_color">Value to color</string>
     <string name="home_button_smd">SMD inductor</string>
+    <string name="home_button_design">Inductor design tool</string>
     <string name="home_our_apps_header_text">Our apps</string>
     <string name="home_button_rate_us">Rate this app on Google Play</string>
     <string name="home_button_view_resistor_app">Check out our resistor app</string>
@@ -17,6 +29,10 @@
     <string name="menu_share_image">Share as image</string>
     <string name="menu_feedback">Feedback</string>
     <string name="menu_about">About the app</string>
+    <!-- Default text -->
+    <string name="default_ctv_value">Select colors</string>
+    <string name="default_vtc_value">Enter inductance</string>
+    <string name="default_smd_value">Enter code</string>
     <!-- Content descriptions -->
     <string name="content_description_app_icon">App icon</string>
     <string name="content_description_menu_more">More</string>

@@ -87,5 +87,5 @@ val silver = Color(0xFFDDDDDD)
 val gray = Color(0xFFA6A6A6)
 val black = Color(0xFF00000F)
 val brown = Color(0xFFB97A57)
-val inductor_green = Color(0xFF64BDE1) // TODO - find shade of green
+val inductor_green = Color(0xFF98FB98) // TODO - find shade of green
 val inductor_wire = Color(0xFFC0C0C0)

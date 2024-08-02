@@ -10,8 +10,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Colorize
+import androidx.compose.material.icons.outlined.DesignServices
 import androidx.compose.material.icons.outlined.Grade
 import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material.icons.outlined.WidthFull
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -83,13 +85,18 @@ fun AppCalculatorButtons(navController: NavController) {
                 { navController.navigate(Screen.ValueToColor.route) }
             ),
         )
-        // TODO
-//        ArrowButtonCard(
-//            Icons.Outlined.WidthFull,
-//            stringResource(id = R.string.home_button_smd),
-//        ) {
-//            navController.navigate(Screen.Smd.route)
-//        }
+        ArrowButtonCard(
+            Icons.Outlined.WidthFull,
+            stringResource(id = R.string.home_button_smd),
+        ) {
+            navController.navigate(Screen.Smd.route)
+        }
+        ArrowButtonCard(
+            Icons.Outlined.DesignServices,
+            stringResource(id = R.string.home_button_design),
+        ) {
+            navController.navigate(Screen.InductorDesign.route)
+        }
     }
 }
 
