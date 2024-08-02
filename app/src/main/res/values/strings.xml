@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">InductanceCalculator</string>
+    <!-- Content descriptions -->
+    <string name="content_description_app_icon">App icon</string>
+    <string name="content_description_menu_more">More</string>
+    <string name="content_description_right_arrow">Right arrow</string>
+    <string name="content_description_error">Error</string>
+</resources>
