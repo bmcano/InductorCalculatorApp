@@ -42,7 +42,7 @@ fun SmdInductorLayout(
     isError: Boolean,
 ) {
     Column(
-        modifier = Modifier.padding(top = 24.dp),
+        modifier = Modifier.padding(top = 12.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(
@@ -50,12 +50,8 @@ fun SmdInductorLayout(
             contentAlignment = Alignment.Center,
         ) {
             Image(
-                painter = painterResource(id = R.drawable.img_smd_inductor_outline),
-                contentDescription = null,
-            )
-            Image(
                 painter = painterResource(id = R.drawable.img_smd_inductor),
-                contentDescription = stringResource(id = R.string.content_description_app_icon),
+                contentDescription = null,
             )
             val text = if (isError) {
                 stringResource(id = R.string.error_na)
@@ -64,6 +60,7 @@ fun SmdInductorLayout(
             }
             Text(
                 text = text + inductor.tolerance,
+                modifier = Modifier.padding(bottom = 90.dp),
                 style = textStyleLargeTitle().white()
             )
         }
