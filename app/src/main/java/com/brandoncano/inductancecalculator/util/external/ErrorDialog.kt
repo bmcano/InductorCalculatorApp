@@ -1,4 +1,4 @@
-package com.brandoncano.inductancecalculator.util
+package com.brandoncano.inductancecalculator.util.external
 
 import android.app.AlertDialog
 import android.content.Context

@@ -39,8 +39,11 @@ import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
 import com.brandoncano.inductancecalculator.ui.composables.ClearSelectionsMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.FeedbackMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ImageTextDropDownMenu
+import com.brandoncano.inductancecalculator.ui.composables.ShareImageMenuItem
+import com.brandoncano.inductancecalculator.ui.composables.ShareTextMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ValueToColorMenuItem
 import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.util.shareableText
 
 @Composable
 fun ColorToValueScreen(
@@ -97,8 +100,8 @@ private fun ContentView(
                 viewModel.clear()
                 focusManager.clearFocus()
             }
-//            ShareTextMenuItem(context, inductor.shareableText(), showMenu)
-//            ShareImageMenuItem(context, showMenu, picture)
+            ShareTextMenuItem(context, inductor.shareableText(), showMenu)
+            ShareImageMenuItem(context, showMenu, picture)
             FeedbackMenuItem(context, showMenu)
             AboutAppMenuItem(navController, showMenu)
         }

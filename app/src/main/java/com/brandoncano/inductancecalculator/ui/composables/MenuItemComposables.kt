@@ -1,6 +1,7 @@
 package com.brandoncano.inductancecalculator.ui.composables
 
 import android.content.Context
+import android.graphics.Picture
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -8,8 +9,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Cancel
 import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.Feedback
+import androidx.compose.material.icons.outlined.Image
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -27,7 +30,11 @@ import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.iconGray
 import com.brandoncano.inductancecalculator.ui.theme.textStyleBody
+import com.brandoncano.inductancecalculator.util.external.ComposableToBitmap
 import com.brandoncano.inductancecalculator.util.external.EmailFeedback
+import com.brandoncano.inductancecalculator.util.external.SaveBitmap
+import com.brandoncano.inductancecalculator.util.external.ShareResistance
+import com.brandoncano.inductancecalculator.util.external.ShareResistor
 
 /**
  * Note: Menu items are in alphabetical order
@@ -80,32 +87,32 @@ fun FeedbackMenuItem(context: Context, showMenu: MutableState<Boolean>) {
     )
 }
 
-//@Composable
-//fun ShareImageMenuItem(context: Context, showMenu: MutableState<Boolean>, picture: Picture) {
-//    DropdownMenuItem(
-//        text = { MenuText(stringRes = R.string.menu_share_image) },
-//        onClick = {
-//            showMenu.value = false
-//            val bitmap = ComposableToBitmap.execute(picture)
-//            val uri = SaveBitmap.execute(bitmap, context) ?: return@DropdownMenuItem
-//            ShareResistor.execute(uri, context)
-//        },
-//        leadingIcon = { MenuIcon(Icons.Outlined.Image) },
-//    )
-//}
+@Composable
+fun ShareImageMenuItem(context: Context, showMenu: MutableState<Boolean>, picture: Picture) {
+    DropdownMenuItem(
+        text = { MenuText(stringRes = R.string.menu_share_image) },
+        onClick = {
+            showMenu.value = false
+            val bitmap = ComposableToBitmap.execute(picture)
+            val uri = SaveBitmap.execute(bitmap, context) ?: return@DropdownMenuItem
+            ShareResistor.execute(uri, context)
+        },
+        leadingIcon = { MenuIcon(Icons.Outlined.Image) },
+    )
+}
 
-//@Composable
-//fun ShareTextMenuItem(context: Context, text: String, showMenu: MutableState<Boolean>) {
-//    DropdownMenuItem(
-//        text = { MenuText(stringRes = R.string.menu_share_text) },
-//        onClick = {
-//            showMenu.value = false
-//            ShareResistance.execute(context, text)
-//        },
-//        leadingIcon = { MenuIcon(Icons.Outlined.Share) },
-//    )
-//}
-//
+@Composable
+fun ShareTextMenuItem(context: Context, text: String, showMenu: MutableState<Boolean>) {
+    DropdownMenuItem(
+        text = { MenuText(stringRes = R.string.menu_share_text) },
+        onClick = {
+            showMenu.value = false
+            ShareResistance.execute(context, text)
+        },
+        leadingIcon = { MenuIcon(Icons.Outlined.Share) },
+    )
+}
+
 @Composable
 fun ValueToColorMenuItem(navController: NavController, showMenu: MutableState<Boolean>) {
     DropdownMenuItem(

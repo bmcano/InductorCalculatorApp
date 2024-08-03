@@ -34,7 +34,7 @@ import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
 import com.brandoncano.inductancecalculator.ui.composables.ArrowButtonCard
 import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
-import com.brandoncano.inductancecalculator.util.OpenLink
+import com.brandoncano.inductancecalculator.util.external.OpenLink
 
 @Composable
 fun AppIcon() {

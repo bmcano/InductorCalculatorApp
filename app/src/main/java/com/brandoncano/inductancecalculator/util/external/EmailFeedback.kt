@@ -3,7 +3,6 @@ package com.brandoncano.inductancecalculator.util.external
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.brandoncano.inductancecalculator.util.ErrorDialog
 
 /**
  * Job: Takes the user to compose an email with a predefined subject and empty body.

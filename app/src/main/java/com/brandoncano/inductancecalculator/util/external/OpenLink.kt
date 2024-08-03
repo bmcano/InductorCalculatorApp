@@ -1,4 +1,4 @@
-package com.brandoncano.inductancecalculator.util
+package com.brandoncano.inductancecalculator.util.external
 
 import android.content.Context
 import android.net.Uri

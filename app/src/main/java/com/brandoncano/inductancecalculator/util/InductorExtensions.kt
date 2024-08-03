@@ -7,12 +7,20 @@ fun InductorCtv.formatInductance(): String {
     return InductanceFormatter.execute(this)
 }
 
+fun InductorCtv.shareableText(): String {
+    return "$this\n${this.formatInductance()}"
+}
+
 fun InductorVtc.isInvalidInput(): Boolean {
     return !IsValidInductance.execute(this.inductance, this.units)
 }
 
 fun InductorVtc.formatInductor() {
     InductorFormatter.execute(this)
+}
+
+fun InductorVtc.shareableText(): String {
+    return "$this\n${this.getInductanceValue()}"
 }
 
 fun String.adjustValueForSharing(): String {
