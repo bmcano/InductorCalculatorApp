@@ -45,5 +45,4 @@ object DropdownLists {
     )
 
     val UNITS_LIST = listOf(Symbols.UH, Symbols.MH)
-    val UNITS_LIST_SMD = listOf(Symbols.NH, Symbols.UH, Symbols.MH)
 }

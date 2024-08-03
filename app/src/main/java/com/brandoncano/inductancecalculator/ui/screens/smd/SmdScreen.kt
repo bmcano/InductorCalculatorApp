@@ -29,7 +29,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.brandoncano.inductancecalculator.R
-import com.brandoncano.inductancecalculator.components.DropdownLists
 import com.brandoncano.inductancecalculator.components.SmdTolerance
 import com.brandoncano.inductancecalculator.model.InductorViewModelFactory
 import com.brandoncano.inductancecalculator.model.smd.InductorSmd

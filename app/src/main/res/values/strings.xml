@@ -29,7 +29,7 @@
     <string name="home_button_color_to_value">Color to value</string>
     <string name="home_button_value_to_color">Value to color</string>
     <string name="home_button_smd">SMD inductor</string>
-    <string name="home_button_design">Inductor design tool</string>
+    <!--<string name="home_button_design">Inductor design tool</string>-->
     <string name="home_our_apps_header_text">Our apps</string>
     <string name="home_button_rate_us">Rate this app on Google Play</string>
     <string name="home_button_view_resistor_app">Check out our resistor app</string>
