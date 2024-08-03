@@ -1,4 +1,4 @@
-package com.brandoncano.inductancecalculator.ui.screens.ctv
+package com.brandoncano.inductancecalculator.ui.screens.vtc
 
 import android.content.Context
 import android.graphics.Picture
@@ -29,28 +29,33 @@ import androidx.navigation.NavController
 import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.components.DropdownLists
 import com.brandoncano.inductancecalculator.model.InductorViewModelFactory
-import com.brandoncano.inductancecalculator.model.ctv.InductorCtv
-import com.brandoncano.inductancecalculator.model.ctv.InductorCtvViewModel
+import com.brandoncano.inductancecalculator.model.vtc.InductorVtc
+import com.brandoncano.inductancecalculator.model.vtc.InductorVtcViewModel
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.composables.AboutAppMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.AppDivider
+import com.brandoncano.inductancecalculator.ui.composables.AppDropDownMenu
 import com.brandoncano.inductancecalculator.ui.composables.AppMenuTopAppBar
 import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
+import com.brandoncano.inductancecalculator.ui.composables.AppTextField
 import com.brandoncano.inductancecalculator.ui.composables.ClearSelectionsMenuItem
+import com.brandoncano.inductancecalculator.ui.composables.ColorToValueMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.FeedbackMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ImageTextDropDownMenu
-import com.brandoncano.inductancecalculator.ui.composables.ValueToColorMenuItem
+import com.brandoncano.inductancecalculator.ui.screens.ctv.FiveBandInductorInfo
 import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.util.formatInductor
+import com.brandoncano.inductancecalculator.util.isInvalidInput
 
 @Composable
-fun ColorToValueScreen(
+fun ValueToColorScreen(
     context: Context,
     navController: NavController,
-    viewModel: InductorCtvViewModel,
-    inductorCtv: LiveData<InductorCtv>,
+    viewModel: InductorVtcViewModel,
+    inductorVtc: LiveData<InductorVtc>
 ) {
     Surface(modifier = Modifier.fillMaxSize()) {
-        ContentView(context, navController, viewModel, inductorCtv)
+        ContentView(context, navController, viewModel, inductorVtc)
     }
 }
 
@@ -58,25 +63,28 @@ fun ColorToValueScreen(
 private fun ContentView(
     context: Context,
     navController: NavController,
-    viewModel: InductorCtvViewModel,
-    inductorCtv: LiveData<InductorCtv>,
+    viewModel: InductorVtcViewModel,
+    inductorVtc: LiveData<InductorVtc>
 ) {
     val focusManager = LocalFocusManager.current
     val interactionSource = remember { MutableInteractionSource() }
     val showMenu = remember { mutableStateOf(false) }
     var reset by remember { mutableStateOf(false) }
-    val inductor by inductorCtv.observeAsState(InductorCtv())
-    var band1 by remember { mutableStateOf(inductor.band1) }
-    var band2 by remember { mutableStateOf(inductor.band2) }
-    var band3 by remember { mutableStateOf(inductor.band3) }
-    var band4 by remember { mutableStateOf(inductor.band4) }
+    val inductor by inductorVtc.observeAsState(InductorVtc())
+    var inductance by remember { mutableStateOf(inductor.inductance) }
+    var units by remember { mutableStateOf(inductor.units) }
+    var tolerance by remember { mutableStateOf(inductor.tolerance) }
+    var isError by remember { mutableStateOf(false) }
     var picture = remember { Picture() }
 
     fun postSelectionActions() {
         reset = false
-        focusManager.clearFocus()
-        viewModel.updateBands(band1, band2, band3, band4)
-        viewModel.saveInductorColors(inductor)
+        viewModel.updateValues(inductance, units, tolerance)
+        isError = inductor.isInvalidInput()
+        if (!isError) {
+            viewModel.saveInductorValues(inductor)
+            inductor.formatInductor()
+        }
     }
 
     Column(
@@ -85,63 +93,62 @@ private fun ContentView(
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        if (!isError) {
+            inductor.formatInductor()
+        }
         AppMenuTopAppBar(
-            titleText = stringResource(R.string.title_color_to_value),
+            titleText = stringResource(R.string.title_value_to_color),
             interactionSource = interactionSource,
             showMenu = showMenu,
         ) {
-            ValueToColorMenuItem(navController, showMenu)
+            ColorToValueMenuItem(navController, showMenu)
             ClearSelectionsMenuItem {
                 showMenu.value = false
                 reset = true
+                isError = false
                 viewModel.clear()
                 focusManager.clearFocus()
+                tolerance = ""
             }
-//            ShareTextMenuItem(context, inductor.shareableText(), showMenu)
+//            ShareTextMenuItem(context, resistor.shareableText(), showMenu)
 //            ShareImageMenuItem(context, showMenu, picture)
             FeedbackMenuItem(context, showMenu)
             AboutAppMenuItem(navController, showMenu)
         }
 
-        picture = inductorPicture(inductor)
-        ImageTextDropDownMenu(
+        picture = inductorPicture(inductor, isError)
+        AppTextField(
             modifier = Modifier.padding(top = 24.dp),
-            label = R.string.hint_band_1,
-            selectedOption = band1,
-            items = DropdownLists.NUMBER_LIST_NO_BLACK,
+            label = R.string.hint_inductance,
+            text = inductance,
             reset = reset,
+            isError = isError,
+            errorMessage = stringResource(id = R.string.error_invalid_inductance)
         ) {
-            band1 = it
+            inductance = it
             postSelectionActions()
         }
-        ImageTextDropDownMenu(
+        AppDropDownMenu(
             modifier = Modifier.padding(top = 12.dp),
-            label = R.string.hint_band_2,
-            selectedOption = band2,
-            items = DropdownLists.NUMBER_LIST,
+            label = R.string.hint_units,
+            selectedOption = units,
+            items = DropdownLists.UNITS_LIST,
             reset = reset,
         ) {
-            band2 = it
-            postSelectionActions()
-        }
-        ImageTextDropDownMenu(
-            modifier = Modifier.padding(top = 12.dp),
-            label = R.string.hint_band_3,
-            selectedOption = band3,
-            items = DropdownLists.MULTIPLIER_LIST,
-            reset = reset,
-        ) {
-            band3 = it
+            units = it
+            focusManager.clearFocus()
             postSelectionActions()
         }
         ImageTextDropDownMenu(
             modifier = Modifier.padding(top = 12.dp),
             label = R.string.hint_band_4,
-            selectedOption = band4,
+            selectedOption = tolerance,
             items = DropdownLists.TOLERANCE_LIST,
             reset = reset,
+            isVtC = true
         ) {
-            band4 = it
+            tolerance = it
+            focusManager.clearFocus()
             postSelectionActions()
         }
         AppDivider(modifier = Modifier.padding(start = 32.dp, end = 32.dp, top = 24.dp))
@@ -152,11 +159,11 @@ private fun ContentView(
 
 @AppScreenPreviews
 @Composable
-private fun ColorToValueScreenPreview() {
+private fun ValueToColorScreenPreview() {
     val app = MainActivity()
-    val viewModel = viewModel<InductorCtvViewModel>(factory = InductorViewModelFactory(app))
-    val inductor = MutableLiveData<InductorCtv>()
+    val viewModel = viewModel<InductorVtcViewModel>(factory = InductorViewModelFactory(app))
+    val inductor = MutableLiveData<InductorVtc>()
     InductanceCalculatorTheme {
-        ColorToValueScreen(app, NavController(app), viewModel, inductor)
+        ValueToColorScreen(app, NavController(app), viewModel, inductor)
     }
 }

@@ -20,12 +20,10 @@ enum class SharedPreferences(private val _name: String, private val _key: String
     BAND_THREE_CTV("color_to_value", "band_3"),
     BAND_FOUR_CTV("color_to_value", "band_4"),
 
-//    NAVBAR_SELECTION_VTC("value_to_color", "navbar_selection"),
-//    USER_INPUT_VTC("value_to_color", "user_input"),
-//    UNITS_DROPDOWN_VTC("value_to_color", "units_dropdown"),
-//    TOLERANCE_DROPDOWN_VTC("value_to_color", "tolerance_dropdown"),
-//    PPM_DROPDOWN_VTC("value_to_color", "ppm_dropdown"),
-//
+    USER_INPUT_VTC("value_to_color", "user_input"),
+    UNITS_DROPDOWN_VTC("value_to_color", "units_dropdown"),
+    TOLERANCE_DROPDOWN_VTC("value_to_color", "tolerance_dropdown"),
+
 //    NAVBAR_SELECTION_SMD("smd", "navbar_selection"),
 //    CODE_INPUT_SMD("smd", "code_input"),
 //    UNITS_DROPDOWN_SMD("smd", "units_dropdown"),

@@ -6,8 +6,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Cancel
+import androidx.compose.material.icons.outlined.Colorize
 import androidx.compose.material.icons.outlined.Feedback
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,7 +25,7 @@ import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.navigation.Screen
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
-import com.brandoncano.inductancecalculator.ui.theme.menuText
+import com.brandoncano.inductancecalculator.ui.theme.iconGray
 import com.brandoncano.inductancecalculator.ui.theme.textStyleBody
 import com.brandoncano.inductancecalculator.util.external.EmailFeedback
 
@@ -52,19 +54,19 @@ fun ClearSelectionsMenuItem(onClick: (() -> Unit)) {
     )
 }
 
-//@Composable
-//fun ColorToValueMenuItem(navController: NavController, showMenu: MutableState<Boolean>) {
-//    DropdownMenuItem(
-//        text = { MenuText(stringRes = R.string.menu_color_to_value) },
-//        onClick = {
-//            showMenu.value = false
-//            navController.navigate(Screen.ColorToValue.route) {
-//                popUpTo(Screen.Home.route)
-//            }
-//        },
-//        leadingIcon = { MenuIcon(Icons.Outlined.Colorize) },
-//    )
-//}
+@Composable
+fun ColorToValueMenuItem(navController: NavController, showMenu: MutableState<Boolean>) {
+    DropdownMenuItem(
+        text = { MenuText(stringRes = R.string.menu_color_to_value) },
+        onClick = {
+            showMenu.value = false
+            navController.navigate(Screen.ColorToValue.route) {
+                popUpTo(Screen.Home.route)
+            }
+        },
+        leadingIcon = { MenuIcon(Icons.Outlined.Colorize) },
+    )
+}
 
 @Composable
 fun FeedbackMenuItem(context: Context, showMenu: MutableState<Boolean>) {
@@ -104,25 +106,25 @@ fun FeedbackMenuItem(context: Context, showMenu: MutableState<Boolean>) {
 //    )
 //}
 //
-//@Composable
-//fun ValueToColorMenuItem(navController: NavController, showMenu: MutableState<Boolean>) {
-//    DropdownMenuItem(
-//        text = { MenuText(stringRes = R.string.menu_value_to_color) },
-//        onClick = {
-//            showMenu.value = false
-//            navController.navigate(Screen.ValueToColor.route) {
-//                popUpTo(Screen.Home.route)
-//            }
-//        },
-//        leadingIcon = { MenuIcon(Icons.Outlined.Search) },
-//    )
-//}
+@Composable
+fun ValueToColorMenuItem(navController: NavController, showMenu: MutableState<Boolean>) {
+    DropdownMenuItem(
+        text = { MenuText(stringRes = R.string.menu_value_to_color) },
+        onClick = {
+            showMenu.value = false
+            navController.navigate(Screen.ValueToColor.route) {
+                popUpTo(Screen.Home.route)
+            }
+        },
+        leadingIcon = { MenuIcon(Icons.Outlined.Search) },
+    )
+}
 
 @Composable
 private fun MenuText(@StringRes stringRes: Int) {
     Text(
         text = stringResource(id = stringRes),
-        style = textStyleBody().menuText(),
+        style = textStyleBody().iconGray(),
     )
 }
 
@@ -144,10 +146,10 @@ private fun MenuItemsPreview() {
         Column {
             AboutAppMenuItem(NavController(app), showMenu)
             // ClearSelectionsMenuItem { }
-            // ColorToValueMenuItem(NavController(app), showMenu)
+             ColorToValueMenuItem(NavController(app), showMenu)
             FeedbackMenuItem(app, showMenu)
             // ShareTextMenuItem(app, "text", showMenu)
-            // ValueToColorMenuItem(NavController(app), showMenu)
+             ValueToColorMenuItem(NavController(app), showMenu)
         }
     }
 }

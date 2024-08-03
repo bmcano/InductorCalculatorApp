@@ -1,11 +1,12 @@
 package com.brandoncano.inductancecalculator.util
 
 import com.brandoncano.inductancecalculator.constants.Colors
+import com.brandoncano.inductancecalculator.constants.Symbols
 import com.brandoncano.inductancecalculator.model.ctv.InductorCtv
 
 object InductanceFormatter {
 
-    private const val ZERO_HENRY = "0 uH"
+    private const val ZERO_HENRY = "0 ${Symbols.UH}"
 
     fun execute(inductor: InductorCtv): String {
         if (inductor.isEmpty()) return "Select colors" // we need this for sharing as text
@@ -23,8 +24,8 @@ object InductanceFormatter {
 
         var inductance = value.times(multiplier)
         val units = when {
-            inductance >= 1000 -> "mH"
-            else -> "uH"
+            inductance >= 1000 -> Symbols.MH
+            else -> Symbols.UH
         }
         while (inductance >= 1000) {
             inductance /= 1000

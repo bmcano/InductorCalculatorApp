@@ -44,6 +44,5 @@ object DropdownLists {
         DropdownItem(Colors.SILVER, "${Symbols.PM}10%"),
     )
 
-
-//    val UNITS_LIST = listOf(Symbols.OHMS, Symbols.KOHMS, Symbols.MOHMS, Symbols.GOHMS)
+    val UNITS_LIST = listOf(Symbols.UH, Symbols.MH)
 }

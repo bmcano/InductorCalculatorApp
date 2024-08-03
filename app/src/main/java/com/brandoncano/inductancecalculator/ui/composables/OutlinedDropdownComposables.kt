@@ -267,6 +267,7 @@ private fun TextDropdownPreview() {
         Column {
             AppDropDownMenu(Modifier, R.string.hint_units, "", list) { }
             AppDropDownMenu(Modifier, R.string.hint_units, "Red", list) { }
+            AppDropDownMenu(Modifier, R.string.hint_units, "Red", list) { }
         }
     }
 }

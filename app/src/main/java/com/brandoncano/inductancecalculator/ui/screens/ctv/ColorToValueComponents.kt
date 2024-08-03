@@ -6,7 +6,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -24,13 +28,15 @@ import com.brandoncano.inductancecalculator.ui.composables.AppCard
 import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
 import com.brandoncano.inductancecalculator.ui.composables.DrawContent
 import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.iconGray
+import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
+import com.brandoncano.inductancecalculator.ui.theme.textStyleSubhead
 import com.brandoncano.inductancecalculator.ui.theme.textStyleTitle
 import com.brandoncano.inductancecalculator.util.ColorFinder
 import com.brandoncano.inductancecalculator.util.formatInductance
 
-private data class ImageColorPair(@DrawableRes val drawableRes: Int, val color: String)
+data class ImageColorPair(@DrawableRes val drawableRes: Int, val color: String)
 
-// picture stuff
 @Composable
 fun inductorPicture(inductor: InductorCtv): Picture {
     val picture = remember { Picture() }
@@ -59,7 +65,6 @@ fun InductorLayout(inductor: InductorCtv) {
             ImageColorPair(R.drawable.img_inductor_end_right, Colors.INDUCTOR_GREEN),
             ImageColorPair(R.drawable.img_inductor_wire, Colors.INDUCTOR_WIRE),
         )
-        // TODO - inductance text
         val text = if (inductor.isEmpty()) {
             stringResource(id = R.string.default_ctv_value)
         } else {
@@ -70,7 +75,7 @@ fun InductorLayout(inductor: InductorCtv) {
 }
 
 @Composable
-private fun InductorRow(vararg inductorImages: ImageColorPair) {
+fun InductorRow(vararg inductorImages: ImageColorPair) {
     Row(horizontalArrangement = Arrangement.Absolute.Center) {
         inductorImages.forEach { inductorImage ->
             val color = ColorFinder.textToColor(inductorImage.color)
@@ -80,7 +85,7 @@ private fun InductorRow(vararg inductorImages: ImageColorPair) {
 }
 
 @Composable
-private fun InductorImage(@DrawableRes drawableRes: Int, color: Color) {
+fun InductorImage(@DrawableRes drawableRes: Int, color: Color) {
     Image(
         painter = painterResource(id = drawableRes),
         contentDescription = null,
@@ -89,7 +94,7 @@ private fun InductorImage(@DrawableRes drawableRes: Int, color: Color) {
 }
 
 @Composable
-private fun InductanceText(inductance: String) {
+fun InductanceText(inductance: String) {
     AppCard(modifier = Modifier.padding(top = 12.dp)) {
         Text(
             text = inductance,
@@ -98,6 +103,35 @@ private fun InductanceText(inductance: String) {
                 .padding(top = 6.dp, bottom = 6.dp, start = 12.dp, end = 12.dp),
             style = textStyleTitle(),
         )
+    }
+}
+
+@Composable
+fun FiveBandInductorInfo() {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.Start
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Image(
+                modifier = Modifier.padding(start = 32.dp, top = 24.dp),
+                imageVector = Icons.Outlined.Info,
+                contentDescription = stringResource(id = R.string.content_description_info),
+                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurfaceVariant)
+            )
+            Text(
+                text = stringResource(id = R.string.ctv_5_band_info_header),
+                modifier = Modifier.padding(start = 8.dp, end = 32.dp, top = 24.dp),
+                style = textStyleHeadline().iconGray(),
+            )
+        }
+        AppCard(modifier = Modifier.padding(start = 32.dp, end = 32.dp, top = 12.dp)) {
+            Text(
+                text = stringResource(id = R.string.ctv_5_band_info_body),
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
+                style = textStyleSubhead(),
+            )
+        }
     }
 }
 

@@ -17,7 +17,7 @@ import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
 import com.brandoncano.inductancecalculator.ui.composables.AppTopAppBar
-import com.brandoncano.inductancecalculator.ui.screens.OurAppsButtons
+import com.brandoncano.inductancecalculator.ui.screens.home.OurAppsButtons
 import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
 
 @Composable

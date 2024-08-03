@@ -1,4 +1,4 @@
-package com.brandoncano.inductancecalculator.ui.screens
+package com.brandoncano.inductancecalculator.ui.screens.home
 
 import android.content.Context
 import androidx.compose.foundation.interaction.MutableInteractionSource
