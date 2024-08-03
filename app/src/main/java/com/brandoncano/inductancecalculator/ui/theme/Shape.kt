@@ -10,6 +10,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
 
 @Composable
 fun RoundedSquare(color: Color, size: Dp) {
@@ -21,10 +22,10 @@ fun RoundedSquare(color: Color, size: Dp) {
     )
 }
 
-//@AppComponentPreviews
-//@Composable
-//private fun RoundedSquarePreview() {
-//    ResistorCalculatorTheme {
-//        RoundedSquare(red, 40.dp)
-//    }
-//}
+@AppComponentPreviews
+@Composable
+private fun RoundedSquarePreview() {
+    InductanceCalculatorTheme {
+        RoundedSquare(red, 40.dp)
+    }
+}

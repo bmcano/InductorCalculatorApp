@@ -22,6 +22,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.layout.onGloballyPositioned
@@ -208,12 +209,12 @@ private fun DropdownItemView(item: DropdownItem, onClick: () -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 4.dp)
+            .padding(horizontal = 16.dp, vertical = 8.dp)
             .clickable { onClick() }
     ) {
         val color = ColorFinder.textToColor(item.name)
-        RoundedSquare(color = color, size = 36.dp)
-        Column {
+        RoundedSquare(color = color, size = 40.dp)
+        Column(modifier = Modifier.align(Alignment.CenterVertically)) {
             Text(
                 text = item.name,
                 style = textStyleSubhead(),
