@@ -14,10 +14,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.brandoncano.inductancecalculator.model.InductorViewModelFactory
 import com.brandoncano.inductancecalculator.model.ctv.InductorCtvViewModel
+import com.brandoncano.inductancecalculator.model.smd.InductorSmdViewModel
 import com.brandoncano.inductancecalculator.model.vtc.InductorVtcViewModel
 import com.brandoncano.inductancecalculator.ui.screens.home.HomeScreen
 import com.brandoncano.inductancecalculator.ui.screens.about.AboutScreen
 import com.brandoncano.inductancecalculator.ui.screens.ctv.ColorToValueScreen
+import com.brandoncano.inductancecalculator.ui.screens.smd.SmdScreen
 import com.brandoncano.inductancecalculator.ui.screens.vtc.ValueToColorScreen
 
 /**
@@ -53,6 +55,15 @@ fun Navigation(context: Context) {
             exitTransition = { ExitTransition.None },
         ) {
             HomeScreen(context, navController)
+        }
+        composable(
+            route = Screen.Smd.route,
+            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
+            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
+        ) {
+            val viewModel = viewModel<InductorSmdViewModel>(factory = InductorViewModelFactory(context))
+            val resistor = viewModel.getInductorLiveData()
+            SmdScreen(context, navController, viewModel, resistor)
         }
         composable(
             route = Screen.ValueToColor.route,

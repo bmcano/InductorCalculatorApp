@@ -3,6 +3,7 @@
     <string name="app_name">Inductor Calculator</string>
     <string name="title_color_to_value">Color to Value</string>
     <string name="title_value_to_color">Value to Color</string>
+    <string name="title_smd">SMD Inductor</string>
     <!-- OutlinedTextField hints -->
     <string name="hint_band_1">First band</string>
     <string name="hint_band_2">Second band</string>
@@ -54,4 +55,5 @@
     <!-- error message -->
     <string name="error_na">N/A</string>
     <string name="error_invalid_inductance">Invalid inductance</string>
+    <string name="error_invalid_code">Invalid code</string>
 </resources>

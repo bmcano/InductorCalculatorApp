@@ -1,6 +1,7 @@
 package com.brandoncano.inductancecalculator.util
 
 import com.brandoncano.inductancecalculator.model.ctv.InductorCtv
+import com.brandoncano.inductancecalculator.model.smd.InductorSmd
 import com.brandoncano.inductancecalculator.model.vtc.InductorVtc
 
 fun InductorCtv.formatInductance(): String {
@@ -26,4 +27,12 @@ fun InductorVtc.shareableText(): String {
 fun String.adjustValueForSharing(): String {
     val color = ColorFinder.textToColor(this)
     return ColorFinder.colorToColorText(color)
+}
+
+fun InductorSmd.isSmdInputInvalid(): Boolean {
+    return !IsValidSmdCode.execute(this.code)
+}
+
+fun InductorSmd.formatInductance(): String {
+    return InductanceSmdFormatter.execute(this)
 }
