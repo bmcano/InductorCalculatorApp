@@ -4,7 +4,9 @@ import android.content.Context
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
@@ -13,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import com.brandoncano.inductancecalculator.model.InductorViewModelFactory
 import com.brandoncano.inductancecalculator.model.ctv.InductorCtvViewModel
 import com.brandoncano.inductancecalculator.ui.screens.HomeScreen
+import com.brandoncano.inductancecalculator.ui.screens.about.AboutScreen
 import com.brandoncano.inductancecalculator.ui.screens.ctv.ColorToValueScreen
 
 /**
@@ -26,6 +29,13 @@ fun Navigation(context: Context) {
         navController = navController,
         startDestination = Screen.Home.route
     ) {
+        composable(
+            route = Screen.About.route,
+            enterTransition = { slideInVertically(initialOffsetY = { it }) },
+            exitTransition = { slideOutVertically(targetOffsetY = { it }) },
+        ) {
+            AboutScreen(context)
+        }
         composable(
             route = Screen.ColorToValue.route,
             enterTransition = { slideInHorizontally(initialOffsetX = { it }) },

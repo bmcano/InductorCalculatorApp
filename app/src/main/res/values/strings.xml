@@ -11,6 +11,15 @@
     <string name="hint_inductance">Inductance</string>
     <string name="hint_units">Units</string>
     <string name="hint_smd_code">Code</string>
+    <!-- About screen/components text -->
+    <string name="about_title">About The App</string>
+    <string name="about_app_version">App version</string>
+    <string name="about_created_by">Created by</string>
+    <string name="about_author">Brandon Cano</string>
+    <string name="about_last_updated_on">Last updated on</string>
+    <string name="about_description">Description</string>
+    <string name="about_description_01">This app features calculators for color-band inductors, capable of converting between color to value and value to color, SMD inductors, and a inductor design tool.</string>
+    <string name="about_view_privacy_policy">View privacy policy</string>
     <!-- Home screen/components text -->
     <string name="home_calculators_header_text">Calculators</string>
     <string name="home_button_color_to_value">Color to value</string>
