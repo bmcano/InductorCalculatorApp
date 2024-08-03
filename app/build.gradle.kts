@@ -79,5 +79,5 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.junit)
     // external libraries
-    implementation(libs.ostermiller.util) // TODO - may end up removing if VtC doesn't happen
+    implementation(libs.ostermiller.util)
 }

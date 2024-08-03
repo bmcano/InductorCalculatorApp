@@ -9,7 +9,7 @@ class InductorCtvViewModel(context: Context): ViewModel() {
 
     private val repository = InductorCtvRepository.getInstance(context)
     private var inductor = MutableLiveData<InductorCtv>().also {
-        it.value = InductorCtv() // TODO - testing this over init
+        it.value = InductorCtv()
     }
 
     override fun onCleared() {

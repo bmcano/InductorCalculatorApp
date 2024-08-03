@@ -90,7 +90,7 @@ fun AppCalculatorButtons(navController: NavController) {
         ) {
             navController.navigate(Screen.Smd.route)
         }
-        // TODO - leaving this here as I may come back to it later and add this page
+        // TODO - Issue #2
         // ArrowButtonCard(
         //     Icons.Outlined.DesignServices,
         //     stringResource(id = R.string.home_button_design),
