@@ -19,7 +19,7 @@
     <string name="about_author">Brandon Cano</string>
     <string name="about_last_updated_on">Last updated on</string>
     <string name="about_description">Description</string>
-    <string name="about_description_01">This app features calculators for color-band inductors, capable of converting between color to value and value to color, SMD inductors, and a inductor design tool.</string>
+    <string name="about_description_01">This app features calculators for color-band inductors, capable of converting between color to value and value to color and SMD inductors.</string>
     <string name="about_view_privacy_policy">View privacy policy</string>
     <!-- CtV/VtC text -->
     <string name="ctv_5_band_info_header">Five band inductors</string>
