@@ -21,7 +21,7 @@ object SaveBitmap {
         val imagesFolder = File(context.cacheDir, "images")
         try {
             imagesFolder.mkdirs()
-            val file = File(imagesFolder, "resistor_image.jpg")
+            val file = File(imagesFolder, "inductor_image.jpg")
             val stream = FileOutputStream(file)
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
             stream.flush()
