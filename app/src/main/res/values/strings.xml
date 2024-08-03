@@ -47,6 +47,8 @@
     <string name="default_vtc_value">Enter inductance</string>
     <string name="default_smd_value">Enter code</string>
     <!-- Content descriptions -->
+    <string name="content_description_expand">Expand options</string>
+    <string name="content_description_collapse">Collapse options</string>
     <string name="content_description_app_icon">App icon</string>
     <string name="content_description_menu_more">More</string>
     <string name="content_description_right_arrow">Right arrow</string>

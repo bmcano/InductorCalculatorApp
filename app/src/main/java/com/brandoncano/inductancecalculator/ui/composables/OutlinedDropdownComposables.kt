@@ -76,9 +76,14 @@ fun AppDropDownMenu(
                 .clickable(interactionSource, null, enabled = true) { expanded = !expanded },
             label = { Text(stringResource(label)) },
             trailingIcon = {
+                val description = if (expanded) {
+                    R.string.content_description_collapse
+                } else {
+                    R.string.content_description_expand
+                }
                 Icon(
                     imageVector = icon,
-                    contentDescription = null,
+                    contentDescription = stringResource(id = description),
                     modifier = Modifier.clickable { expanded = !expanded }
                 )
             },
@@ -165,10 +170,16 @@ fun ImageTextDropDownMenu(
             leadingIcon = if (selectedLeadingIcon != inductor_green) {
                 { RoundedSquare(color = selectedLeadingIcon, size = 24.dp) }
             } else null,
+
             trailingIcon = {
+                val description = if (expanded) {
+                    R.string.content_description_collapse
+                } else {
+                    R.string.content_description_expand
+                }
                 Icon(
                     imageVector = icon,
-                    contentDescription = null,
+                    contentDescription = stringResource(id = description),
                     modifier = Modifier.clickable { expanded = !expanded }
                 )
             },
