@@ -16,15 +16,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.inductancecalculator.R
+import com.brandoncano.inductancecalculator.constants.Links
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
-import com.brandoncano.inductancecalculator.ui.theme.textStyleBody
-import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
-import com.brandoncano.inductancecalculator.util.external.OpenLink
 import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.composables.AppStandardCard
 import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
+import com.brandoncano.sharedcomponents.text.textStyleBody
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.utils.OpenLink
 
 @Composable
 fun AuthorCard() {
@@ -60,7 +61,7 @@ fun ViewPrivacyPolicy(context: Context) {
             Icons.Outlined.FileOpen,
             stringResource(id = R.string.about_view_privacy_policy)
         ) {
-            OpenLink.openPrivacyPolicy(context)
+            OpenLink.execute(context, Links.PRIVACY_POLICY)
         }
     )
 }

@@ -35,10 +35,10 @@ import com.brandoncano.inductancecalculator.components.DropdownItem
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.RoundedSquare
 import com.brandoncano.inductancecalculator.ui.theme.inductor_green
-import com.brandoncano.inductancecalculator.ui.theme.textStyleCaption
-import com.brandoncano.inductancecalculator.ui.theme.textStyleSubhead
 import com.brandoncano.inductancecalculator.util.ColorFinder
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
+import com.brandoncano.sharedcomponents.text.textStyleCaption
+import com.brandoncano.sharedcomponents.text.textStyleSubhead
 
 @Composable
 fun ImageTextDropDownMenu(

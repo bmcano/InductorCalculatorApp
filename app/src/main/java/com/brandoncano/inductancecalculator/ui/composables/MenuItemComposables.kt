@@ -29,13 +29,13 @@ import com.brandoncano.inductancecalculator.navigation.Screen
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.iconGray
-import com.brandoncano.inductancecalculator.ui.theme.textStyleBody
-import com.brandoncano.inductancecalculator.util.external.ComposableToBitmap
-import com.brandoncano.inductancecalculator.util.external.EmailFeedback
-import com.brandoncano.inductancecalculator.util.external.SaveBitmap
-import com.brandoncano.inductancecalculator.util.external.ShareResistance
-import com.brandoncano.inductancecalculator.util.external.ShareResistor
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
+import com.brandoncano.sharedcomponents.text.textStyleBody
+import com.brandoncano.sharedcomponents.utils.ComposableToBitmap
+import com.brandoncano.sharedcomponents.utils.SaveBitmap
+import com.brandoncano.sharedcomponents.utils.SendFeedback
+import com.brandoncano.sharedcomponents.utils.ShareImage
+import com.brandoncano.sharedcomponents.utils.ShareText
 
 /**
  * Note: Menu items are in alphabetical order
@@ -82,7 +82,7 @@ fun FeedbackMenuItem(context: Context, showMenu: MutableState<Boolean>) {
         text = { MenuText(stringRes = R.string.menu_feedback) },
         onClick = {
             showMenu.value = false
-            EmailFeedback.execute(context)
+            SendFeedback.execute(context, "Inductor Color Code Calculator")
         },
         leadingIcon = { MenuIcon(Icons.Outlined.Feedback) },
     )
@@ -95,8 +95,9 @@ fun ShareImageMenuItem(context: Context, showMenu: MutableState<Boolean>, pictur
         onClick = {
             showMenu.value = false
             val bitmap = ComposableToBitmap.execute(picture)
-            val uri = SaveBitmap.execute(bitmap, context) ?: return@DropdownMenuItem
-            ShareResistor.execute(uri, context)
+            val applicationId = "com.brandoncano.inductancecalculator.provider"
+            val uri = SaveBitmap.execute(bitmap, context, applicationId) ?: return@DropdownMenuItem
+            ShareImage.execute(uri, context)
         },
         leadingIcon = { MenuIcon(Icons.Outlined.Image) },
     )
@@ -108,7 +109,7 @@ fun ShareTextMenuItem(context: Context, text: String, showMenu: MutableState<Boo
         text = { MenuText(stringRes = R.string.menu_share_text) },
         onClick = {
             showMenu.value = false
-            ShareResistance.execute(context, text)
+            ShareText.execute(context, text)
         },
         leadingIcon = { MenuIcon(Icons.Outlined.Share) },
     )

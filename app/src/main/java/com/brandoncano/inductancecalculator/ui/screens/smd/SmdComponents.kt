@@ -19,13 +19,13 @@ import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.components.SmdTolerance
 import com.brandoncano.inductancecalculator.model.smd.InductorSmd
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
-import com.brandoncano.inductancecalculator.ui.theme.textStyleLargeTitle
-import com.brandoncano.inductancecalculator.ui.theme.textStyleTitle
 import com.brandoncano.inductancecalculator.ui.theme.white
 import com.brandoncano.inductancecalculator.util.formatInductance
 import com.brandoncano.sharedcomponents.composables.AppCard
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 import com.brandoncano.sharedcomponents.composables.DrawContent
+import com.brandoncano.sharedcomponents.text.textStyleLargeTitle
+import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 @Composable
 fun smdInductorPicture(inductor: InductorSmd, isError: Boolean): Picture {

@@ -27,14 +27,15 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.brandoncano.inductancecalculator.R
+import com.brandoncano.inductancecalculator.constants.Links
 import com.brandoncano.inductancecalculator.navigation.Screen
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
-import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
-import com.brandoncano.inductancecalculator.util.external.OpenLink
 import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.utils.OpenLink
 
 @Composable
 fun AppIcon() {
@@ -111,21 +112,21 @@ fun OurAppsButtons(context: Context) {
                 Icons.Outlined.Grade,
                 stringResource(id = R.string.home_button_rate_us)
             ) {
-                OpenLink.openInductorApp(context)
+                OpenLink.execute(context, Links.INDUCTOR_PLAYSTORE)
             },
         )
         AppArrowCardButton(
             ArrowCardButtonContents(
                 ImageVector.vectorResource(id = R.drawable.icon_outline_add_to_home_screen),
-                stringResource(id = R.string.home_button_view_resistor_app)
+                stringResource(id = R.string.home_button_view_capacitor_app)
             ) {
-                OpenLink.openResistorApp(context)
+                OpenLink.execute(context, Links.CAPACITOR_PLAYSTORE)
             },
             ArrowCardButtonContents(
                 ImageVector.vectorResource(id = R.drawable.icon_outline_add_to_home_screen),
-                stringResource(id = R.string.home_button_view_capacitor_app)
+                stringResource(id = R.string.home_button_view_resistor_app)
             ) {
-                OpenLink.openCapacitorApp(context)
+                OpenLink.execute(context, Links.RESISTOR_PLAYSTORE)
             },
         )
     }
