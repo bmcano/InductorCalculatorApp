@@ -12,10 +12,10 @@ import androidx.compose.ui.unit.dp
 import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.constants.Colors
 import com.brandoncano.inductancecalculator.model.vtc.InductorVtc
-import com.brandoncano.inductancecalculator.ui.composables.DrawContent
 import com.brandoncano.inductancecalculator.ui.screens.ctv.ImageColorPair
 import com.brandoncano.inductancecalculator.ui.screens.ctv.InductanceText
 import com.brandoncano.inductancecalculator.ui.screens.ctv.InductorRow
+import com.brandoncano.sharedcomponents.composables.DrawContent
 
 @Composable
 fun inductorPicture(inductor: InductorVtc, isError: Boolean): Picture {

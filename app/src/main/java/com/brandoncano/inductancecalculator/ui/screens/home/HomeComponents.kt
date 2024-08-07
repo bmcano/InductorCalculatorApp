@@ -29,11 +29,12 @@ import androidx.navigation.NavController
 import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.navigation.Screen
 import com.brandoncano.inductancecalculator.ui.MainActivity
-import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
-import com.brandoncano.inductancecalculator.ui.composables.ArrowButtonCard
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
 import com.brandoncano.inductancecalculator.util.external.OpenLink
+import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
+import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
+import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
 
 @Composable
 fun AppIcon() {
@@ -70,33 +71,28 @@ fun AppCalculatorButtons(navController: NavController) {
                 .align(Alignment.Start),
             style = textStyleHeadline(),
         )
-        ArrowButtonCard(
-            listOf(
+        AppArrowCardButton(
+            ArrowCardButtonContents(
                 Icons.Outlined.Colorize,
-                Icons.Outlined.Search
-            ),
-            listOf(
-                stringResource(id = R.string.home_button_color_to_value),
+                stringResource(id = R.string.home_button_color_to_value)
+            ) {
+                navController.navigate(Screen.ColorToValue.route)
+            },
+            ArrowCardButtonContents(
+                Icons.Outlined.Search,
                 stringResource(id = R.string.home_button_value_to_color)
-            ),
-            listOf(
-                { navController.navigate(Screen.ColorToValue.route) },
-                { navController.navigate(Screen.ValueToColor.route) }
-            ),
+            ) {
+                navController.navigate(Screen.ValueToColor.route)
+            },
         )
-        ArrowButtonCard(
-            Icons.Outlined.WidthFull,
-            stringResource(id = R.string.home_button_smd),
-        ) {
-            navController.navigate(Screen.Smd.route)
-        }
-        // TODO - Issue #2
-        // ArrowButtonCard(
-        //     Icons.Outlined.DesignServices,
-        //     stringResource(id = R.string.home_button_design),
-        // ) {
-        //     navController.navigate(Screen.InductorDesign.route)
-        // }
+        AppArrowCardButton(
+            ArrowCardButtonContents(
+                Icons.Outlined.WidthFull,
+                stringResource(id = R.string.home_button_smd)
+            ) {
+                navController.navigate(Screen.Smd.route)
+            },
+        )
     }
 }
 
@@ -110,26 +106,27 @@ fun OurAppsButtons(context: Context) {
                 .align(Alignment.Start),
             style = textStyleHeadline(),
         )
-        ArrowButtonCard(
-            Icons.Outlined.Grade,
-            stringResource(id = R.string.home_button_rate_us),
-        ) {
-            OpenLink.openInductorApp(context)
-        }
-        ArrowButtonCard(
-            listOf(
-                // Note: we do this instead because material icons does not have the outlined version
+        AppArrowCardButton(
+            ArrowCardButtonContents(
+                Icons.Outlined.Grade,
+                stringResource(id = R.string.home_button_rate_us)
+            ) {
+                OpenLink.openInductorApp(context)
+            },
+        )
+        AppArrowCardButton(
+            ArrowCardButtonContents(
                 ImageVector.vectorResource(id = R.drawable.icon_outline_add_to_home_screen),
-                ImageVector.vectorResource(id = R.drawable.icon_outline_add_to_home_screen)
-            ),
-            listOf(
-                stringResource(id = R.string.home_button_view_resistor_app),
+                stringResource(id = R.string.home_button_view_resistor_app)
+            ) {
+                OpenLink.openResistorApp(context)
+            },
+            ArrowCardButtonContents(
+                ImageVector.vectorResource(id = R.drawable.icon_outline_add_to_home_screen),
                 stringResource(id = R.string.home_button_view_capacitor_app)
-            ),
-            listOf(
-                { OpenLink.openResistorApp(context) },
-                { OpenLink.openCapacitorApp(context) }
-            ),
+            ) {
+                OpenLink.openCapacitorApp(context)
+            },
         )
     }
 }

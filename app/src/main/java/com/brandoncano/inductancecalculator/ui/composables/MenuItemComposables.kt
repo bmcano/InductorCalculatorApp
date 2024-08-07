@@ -35,6 +35,7 @@ import com.brandoncano.inductancecalculator.util.external.EmailFeedback
 import com.brandoncano.inductancecalculator.util.external.SaveBitmap
 import com.brandoncano.inductancecalculator.util.external.ShareResistance
 import com.brandoncano.inductancecalculator.util.external.ShareResistor
+import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 
 /**
  * Note: Menu items are in alphabetical order
@@ -152,11 +153,12 @@ private fun MenuItemsPreview() {
     InductorCalculatorTheme {
         Column {
             AboutAppMenuItem(NavController(app), showMenu)
-            // ClearSelectionsMenuItem { }
-             ColorToValueMenuItem(NavController(app), showMenu)
+            ClearSelectionsMenuItem { }
+            ColorToValueMenuItem(NavController(app), showMenu)
             FeedbackMenuItem(app, showMenu)
-            // ShareTextMenuItem(app, "text", showMenu)
-             ValueToColorMenuItem(NavController(app), showMenu)
+            ShareImageMenuItem(app, showMenu, Picture())
+            ShareTextMenuItem(app, "text", showMenu)
+            ValueToColorMenuItem(NavController(app), showMenu)
         }
     }
 }

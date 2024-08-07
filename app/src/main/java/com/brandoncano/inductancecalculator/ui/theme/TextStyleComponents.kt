@@ -12,7 +12,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
+import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 
 /**
  * Job: Instead of custom typography we use custom text styles for each Text() component

@@ -20,10 +20,10 @@ import androidx.navigation.NavController
 import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.composables.AboutAppMenuItem
-import com.brandoncano.inductancecalculator.ui.composables.AppMenuTopAppBar
-import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
 import com.brandoncano.inductancecalculator.ui.composables.FeedbackMenuItem
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
+import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
+import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 
 @Composable
 fun HomeScreen(context: Context, navController: NavController) {

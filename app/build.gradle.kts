@@ -80,5 +80,5 @@ dependencies {
     testImplementation(libs.junit)
     // external libraries
     implementation(libs.ostermiller.util)
-//    implementation(files("libs/app-shared.aar"))
+    implementation(files("libs/app-shared.aar"))
 }

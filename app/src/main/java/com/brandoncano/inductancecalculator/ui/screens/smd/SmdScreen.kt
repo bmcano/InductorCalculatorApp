@@ -35,10 +35,6 @@ import com.brandoncano.inductancecalculator.model.smd.InductorSmd
 import com.brandoncano.inductancecalculator.model.smd.InductorSmdViewModel
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.composables.AboutAppMenuItem
-import com.brandoncano.inductancecalculator.ui.composables.AppDropDownMenu
-import com.brandoncano.inductancecalculator.ui.composables.AppMenuTopAppBar
-import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
-import com.brandoncano.inductancecalculator.ui.composables.AppTextField
 import com.brandoncano.inductancecalculator.ui.composables.ClearSelectionsMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.FeedbackMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ShareImageMenuItem
@@ -46,6 +42,10 @@ import com.brandoncano.inductancecalculator.ui.composables.ShareTextMenuItem
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.util.formatInductance
 import com.brandoncano.inductancecalculator.util.isSmdInputInvalid
+import com.brandoncano.sharedcomponents.composables.AppDropDownMenu
+import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
+import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
+import com.brandoncano.sharedcomponents.composables.AppTextField
 import java.util.Locale
 
 @Composable
@@ -109,8 +109,8 @@ private fun ContentView(
 
         picture = smdInductorPicture(inductor, isError)
         AppTextField(
-            modifier = Modifier.padding(top = 24.dp),
-            label = R.string.hint_smd_code,
+            label = stringResource(id = R.string.hint_smd_code),
+            modifier = Modifier.padding(top = 24.dp, start = 32.dp, end = 32.dp),
             text = code,
             reset = reset,
             isError = isError,
@@ -126,8 +126,8 @@ private fun ContentView(
             postSelectionActions()
         }
         AppDropDownMenu(
-            modifier = Modifier.padding(top = 12.dp),
-            label = R.string.hint_band_4,
+            label = stringResource(id = R.string.hint_band_4),
+            modifier = Modifier.padding(top = 12.dp, start = 32.dp, end = 32.dp),
             selectedOption = inductor.tolerance,
             items = SmdTolerance.getLetterList(),
             reset = reset,

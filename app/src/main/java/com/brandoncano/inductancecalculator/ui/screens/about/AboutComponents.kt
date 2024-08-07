@@ -16,14 +16,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.inductancecalculator.R
-import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
-import com.brandoncano.inductancecalculator.ui.composables.AppDivider
-import com.brandoncano.inductancecalculator.ui.composables.AppStandardCard
-import com.brandoncano.inductancecalculator.ui.composables.ArrowButtonCard
 import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleBody
 import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
 import com.brandoncano.inductancecalculator.util.external.OpenLink
+import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
+import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
+import com.brandoncano.sharedcomponents.composables.AppDivider
+import com.brandoncano.sharedcomponents.composables.AppStandardCard
+import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
 
 @Composable
 fun AuthorCard() {
@@ -54,12 +55,14 @@ fun AppInfoCard() {
 
 @Composable
 fun ViewPrivacyPolicy(context: Context) {
-    ArrowButtonCard(
-        Icons.Outlined.FileOpen,
-        stringResource(id = R.string.about_view_privacy_policy),
-    ) {
-        OpenLink.openPrivacyPolicy(context)
-    }
+    AppArrowCardButton(
+        ArrowCardButtonContents(
+            Icons.Outlined.FileOpen,
+            stringResource(id = R.string.about_view_privacy_policy)
+        ) {
+            OpenLink.openPrivacyPolicy(context)
+        }
+    )
 }
 
 @Composable
