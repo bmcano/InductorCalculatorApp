@@ -72,7 +72,7 @@ object ColorFinder {
             white -> C.WHITE
             gold -> C.GOLD
             silver -> C.SILVER
-            else -> C.INDUCTOR_GREEN
+            else -> "" // we don't want an option since this is used for sharing VtC
         }
     }
 }

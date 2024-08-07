@@ -62,8 +62,8 @@ fun Navigation(context: Context) {
             exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
         ) {
             val viewModel = viewModel<InductorSmdViewModel>(factory = InductorViewModelFactory(context))
-            val resistor = viewModel.getInductorLiveData()
-            SmdScreen(context, navController, viewModel, resistor)
+            val inductor = viewModel.getInductorLiveData()
+            SmdScreen(context, navController, viewModel, inductor)
         }
         composable(
             route = Screen.ValueToColor.route,

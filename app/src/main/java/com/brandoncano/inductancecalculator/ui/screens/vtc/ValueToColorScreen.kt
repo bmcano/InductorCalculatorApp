@@ -33,11 +33,6 @@ import com.brandoncano.inductancecalculator.model.vtc.InductorVtc
 import com.brandoncano.inductancecalculator.model.vtc.InductorVtcViewModel
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.composables.AboutAppMenuItem
-import com.brandoncano.inductancecalculator.ui.composables.AppDivider
-import com.brandoncano.inductancecalculator.ui.composables.AppDropDownMenu
-import com.brandoncano.inductancecalculator.ui.composables.AppMenuTopAppBar
-import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
-import com.brandoncano.inductancecalculator.ui.composables.AppTextField
 import com.brandoncano.inductancecalculator.ui.composables.ClearSelectionsMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ColorToValueMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.FeedbackMenuItem
@@ -45,10 +40,15 @@ import com.brandoncano.inductancecalculator.ui.composables.ImageTextDropDownMenu
 import com.brandoncano.inductancecalculator.ui.composables.ShareImageMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ShareTextMenuItem
 import com.brandoncano.inductancecalculator.ui.screens.ctv.FiveBandInductorInfo
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.util.formatInductor
 import com.brandoncano.inductancecalculator.util.isInvalidInput
 import com.brandoncano.inductancecalculator.util.shareableText
+import com.brandoncano.sharedcomponents.composables.AppDivider
+import com.brandoncano.sharedcomponents.composables.AppDropDownMenu
+import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
+import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
+import com.brandoncano.sharedcomponents.composables.AppTextField
 
 @Composable
 fun ValueToColorScreen(
@@ -121,8 +121,8 @@ private fun ContentView(
 
         picture = inductorPicture(inductor, isError)
         AppTextField(
-            modifier = Modifier.padding(top = 24.dp),
-            label = R.string.hint_inductance,
+            label = stringResource(id = R.string.hint_inductance),
+            modifier = Modifier.padding(top = 24.dp, start = 32.dp, end = 32.dp),
             text = inductance,
             reset = reset,
             isError = isError,
@@ -132,8 +132,8 @@ private fun ContentView(
             postSelectionActions()
         }
         AppDropDownMenu(
-            modifier = Modifier.padding(top = 12.dp),
-            label = R.string.hint_units,
+            label = stringResource(id = R.string.hint_units),
+            modifier = Modifier.padding(top = 12.dp, start = 32.dp, end = 32.dp),
             selectedOption = units,
             items = DropdownLists.UNITS_LIST,
             reset = reset,
@@ -166,7 +166,7 @@ private fun ValueToColorScreenPreview() {
     val app = MainActivity()
     val viewModel = viewModel<InductorVtcViewModel>(factory = InductorViewModelFactory(app))
     val inductor = MutableLiveData<InductorVtc>()
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         ValueToColorScreen(app, NavController(app), viewModel, inductor)
     }
 }

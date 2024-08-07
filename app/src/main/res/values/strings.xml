@@ -50,9 +50,6 @@
     <string name="content_description_expand">Expand options</string>
     <string name="content_description_collapse">Collapse options</string>
     <string name="content_description_app_icon">App icon</string>
-    <string name="content_description_menu_more">More</string>
-    <string name="content_description_right_arrow">Right arrow</string>
-    <string name="content_description_error">Error</string>
     <string name="content_description_info">Information</string>
     <!-- error message -->
     <string name="error_na">N/A</string>

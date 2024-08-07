@@ -89,7 +89,7 @@ private val darkColorScheme = darkColorScheme(
 
 
 @Composable
-fun InductanceCalculatorTheme(
+fun InductorCalculatorTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {

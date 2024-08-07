@@ -15,10 +15,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.ui.MainActivity
-import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
-import com.brandoncano.inductancecalculator.ui.composables.AppTopAppBar
 import com.brandoncano.inductancecalculator.ui.screens.home.OurAppsButtons
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
+import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
+import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 
 @Composable
 fun AboutScreen(context: Context) {
@@ -49,7 +49,7 @@ private fun ContentView(context: Context) {
 @Composable
 private fun AboutPreview() {
     val app = MainActivity()
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         AboutScreen(app)
     }
 }

@@ -4,12 +4,12 @@ import com.brandoncano.inductancecalculator.constants.Symbols
 import com.brandoncano.inductancecalculator.model.smd.InductorSmd
 
 /**
- * Job: Format the resistance text depending on the mode and code
+ * Job: Format the inductance text depending on the mode and code
  */
 object InductanceSmdFormatter {
 
     fun execute(inductor: InductorSmd): String {
-        if (inductor.isEmpty()) return "Enter code"
+        if (inductor.isEmpty()) return "Enter code" // we need this for sharing as text
         val code = inductor.code
         return threeDigit(code)
     }

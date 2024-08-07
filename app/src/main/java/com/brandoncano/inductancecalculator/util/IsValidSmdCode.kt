@@ -6,7 +6,6 @@ package com.brandoncano.inductancecalculator.util
 object IsValidSmdCode {
 
     fun execute(code: String): Boolean {
-        // we return true here since the calculation for resistance won't unless proper length
         if (code.length < 3 ) {
             return true
         }

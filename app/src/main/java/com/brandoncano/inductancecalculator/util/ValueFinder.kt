@@ -3,6 +3,9 @@ package com.brandoncano.inductancecalculator.util
 import com.brandoncano.inductancecalculator.constants.Symbols as S
 import com.brandoncano.inductancecalculator.constants.Colors as C
 
+/**
+ * Job: gets a value that a color is associated with, or a default if not.
+ */
 object ValueFinder {
 
     fun getNumeral(color: String) = getValue(color).first

@@ -3,6 +3,9 @@ package com.brandoncano.inductancecalculator.util
 import com.Ostermiller.util.SignificantFigures
 import com.brandoncano.inductancecalculator.constants.Symbols
 
+/**
+ * Job: Checks if an inductance value is valid for constant checking
+ */
 object IsValidInductance {
 
     fun execute(input: String, units: String): Boolean {

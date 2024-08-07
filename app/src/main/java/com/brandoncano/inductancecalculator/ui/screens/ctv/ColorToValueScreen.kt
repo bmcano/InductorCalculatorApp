@@ -33,17 +33,17 @@ import com.brandoncano.inductancecalculator.model.ctv.InductorCtv
 import com.brandoncano.inductancecalculator.model.ctv.InductorCtvViewModel
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.composables.AboutAppMenuItem
-import com.brandoncano.inductancecalculator.ui.composables.AppDivider
-import com.brandoncano.inductancecalculator.ui.composables.AppMenuTopAppBar
-import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
 import com.brandoncano.inductancecalculator.ui.composables.ClearSelectionsMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.FeedbackMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ImageTextDropDownMenu
 import com.brandoncano.inductancecalculator.ui.composables.ShareImageMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ShareTextMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ValueToColorMenuItem
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.util.shareableText
+import com.brandoncano.sharedcomponents.composables.AppDivider
+import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
+import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 
 @Composable
 fun ColorToValueScreen(
@@ -159,7 +159,7 @@ private fun ColorToValueScreenPreview() {
     val app = MainActivity()
     val viewModel = viewModel<InductorCtvViewModel>(factory = InductorViewModelFactory(app))
     val inductor = MutableLiveData<InductorCtv>()
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         ColorToValueScreen(app, NavController(app), viewModel, inductor)
     }
 }
