@@ -42,7 +42,7 @@ import com.brandoncano.inductancecalculator.ui.composables.ImageTextDropDownMenu
 import com.brandoncano.inductancecalculator.ui.composables.ShareImageMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ShareTextMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ValueToColorMenuItem
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.util.shareableText
 
 @Composable
@@ -159,7 +159,7 @@ private fun ColorToValueScreenPreview() {
     val app = MainActivity()
     val viewModel = viewModel<InductorCtvViewModel>(factory = InductorViewModelFactory(app))
     val inductor = MutableLiveData<InductorCtv>()
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         ColorToValueScreen(app, NavController(app), viewModel, inductor)
     }
 }

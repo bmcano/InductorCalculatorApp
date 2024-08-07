@@ -25,7 +25,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.brandoncano.inductancecalculator.R
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleCallout
 
 @Composable
@@ -140,7 +140,7 @@ private fun CardRowView(
 @AppComponentPreviews
 @Composable
 private fun AppStandardCardPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         AppStandardCard {
             Text(text = "Text1", modifier = Modifier.padding(4.dp))
             AppDivider(onCard = true)
@@ -155,7 +155,7 @@ private fun AppStandardCardPreview() {
 @AppComponentPreviews
 @Composable
 private fun AppCardPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         AppCard {
             Text(text = "Text1extended", modifier = Modifier.padding(4.dp))
         }

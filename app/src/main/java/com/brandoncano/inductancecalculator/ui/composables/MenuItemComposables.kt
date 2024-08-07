@@ -27,7 +27,7 @@ import androidx.navigation.NavController
 import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.navigation.Screen
 import com.brandoncano.inductancecalculator.ui.MainActivity
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.iconGray
 import com.brandoncano.inductancecalculator.ui.theme.textStyleBody
 import com.brandoncano.inductancecalculator.util.external.ComposableToBitmap
@@ -149,7 +149,7 @@ private fun MenuIcon(imageVector: ImageVector) {
 private fun MenuItemsPreview() {
     val showMenu = remember { mutableStateOf(false) }
     val app = MainActivity()
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         Column {
             AboutAppMenuItem(NavController(app), showMenu)
             // ClearSelectionsMenuItem { }

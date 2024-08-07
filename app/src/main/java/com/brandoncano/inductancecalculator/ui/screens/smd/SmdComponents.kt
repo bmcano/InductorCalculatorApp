@@ -21,7 +21,7 @@ import com.brandoncano.inductancecalculator.model.smd.InductorSmd
 import com.brandoncano.inductancecalculator.ui.composables.AppCard
 import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
 import com.brandoncano.inductancecalculator.ui.composables.DrawContent
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleLargeTitle
 import com.brandoncano.inductancecalculator.ui.theme.textStyleTitle
 import com.brandoncano.inductancecalculator.ui.theme.white
@@ -89,7 +89,7 @@ private fun InductanceText(inductance: String) {
 @AppComponentPreviews
 @Composable
 private fun SmdInductorLayoutPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         val inductor = InductorSmd(code = "1R4")
         SmdInductorLayout(inductor, false)
     }

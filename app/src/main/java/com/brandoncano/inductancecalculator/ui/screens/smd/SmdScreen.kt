@@ -43,7 +43,7 @@ import com.brandoncano.inductancecalculator.ui.composables.ClearSelectionsMenuIt
 import com.brandoncano.inductancecalculator.ui.composables.FeedbackMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ShareImageMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.ShareTextMenuItem
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.util.formatInductance
 import com.brandoncano.inductancecalculator.util.isSmdInputInvalid
 import java.util.Locale
@@ -145,7 +145,7 @@ private fun SmdScreenPreview() {
     val app = MainActivity()
     val viewModel = viewModel<InductorSmdViewModel>(factory = InductorViewModelFactory(app))
     val inductor = MutableLiveData<InductorSmd>()
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         SmdScreen(app, NavController(app), viewModel, inductor)
     }
 }

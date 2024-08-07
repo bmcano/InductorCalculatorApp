@@ -31,7 +31,7 @@ import com.brandoncano.inductancecalculator.navigation.Screen
 import com.brandoncano.inductancecalculator.ui.MainActivity
 import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
 import com.brandoncano.inductancecalculator.ui.composables.ArrowButtonCard
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
 import com.brandoncano.inductancecalculator.util.external.OpenLink
 
@@ -137,7 +137,7 @@ fun OurAppsButtons(context: Context) {
 @AppComponentPreviews
 @Composable
 private fun AppIconPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         AppIcon()
     }
 }
@@ -145,7 +145,7 @@ private fun AppIconPreview() {
 @AppComponentPreviews
 @Composable
 private fun StandardCalculatorButtonsPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         val app = MainActivity()
         AppCalculatorButtons(NavController(app))
     }
@@ -154,7 +154,7 @@ private fun StandardCalculatorButtonsPreview() {
 @AppComponentPreviews
 @Composable
 private fun OurAppsButtonsPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         val app = MainActivity()
         OurAppsButtons(app)
     }

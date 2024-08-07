@@ -23,7 +23,7 @@ import com.brandoncano.inductancecalculator.ui.composables.AboutAppMenuItem
 import com.brandoncano.inductancecalculator.ui.composables.AppMenuTopAppBar
 import com.brandoncano.inductancecalculator.ui.composables.AppScreenPreviews
 import com.brandoncano.inductancecalculator.ui.composables.FeedbackMenuItem
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 
 @Composable
 fun HomeScreen(context: Context, navController: NavController) {
@@ -57,7 +57,7 @@ private fun ContentView(context: Context, navController: NavController) {
 @Composable
 private fun HomePreview() {
     val app = MainActivity()
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         HomeScreen(app, NavController(app))
     }
 }

@@ -28,7 +28,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
 import com.brandoncano.inductancecalculator.R
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleSubhead
 
 @Composable
@@ -88,7 +88,7 @@ fun AppTextField(
 @AppComponentPreviews
 @Composable
 private fun AppTextFieldPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         Column {
             AppTextField(label = R.string.hint_units) { }
             AppTextField(label = R.string.hint_units, text = "Example") { }

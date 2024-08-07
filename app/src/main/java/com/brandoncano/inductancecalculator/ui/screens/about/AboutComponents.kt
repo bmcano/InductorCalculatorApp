@@ -20,7 +20,7 @@ import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
 import com.brandoncano.inductancecalculator.ui.composables.AppDivider
 import com.brandoncano.inductancecalculator.ui.composables.AppStandardCard
 import com.brandoncano.inductancecalculator.ui.composables.ArrowButtonCard
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleBody
 import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
 import com.brandoncano.inductancecalculator.util.external.OpenLink
@@ -100,7 +100,7 @@ private fun HeadlineBodyStack(@StringRes label: Int, @StringRes body: Int) {
 @AppComponentPreviews
 @Composable
 private fun HeadlineBodyStackPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         Column(
             modifier = Modifier.height(64.dp)
         ) {

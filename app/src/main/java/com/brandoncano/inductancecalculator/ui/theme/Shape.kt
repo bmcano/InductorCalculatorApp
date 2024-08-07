@@ -25,7 +25,7 @@ fun RoundedSquare(color: Color, size: Dp) {
 @AppComponentPreviews
 @Composable
 private fun RoundedSquarePreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         RoundedSquare(red, 40.dp)
     }
 }

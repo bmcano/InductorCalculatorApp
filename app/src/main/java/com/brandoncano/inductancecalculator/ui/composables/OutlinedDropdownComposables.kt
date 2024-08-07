@@ -32,7 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
 import com.brandoncano.inductancecalculator.R
 import com.brandoncano.inductancecalculator.components.DropdownItem
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.RoundedSquare
 import com.brandoncano.inductancecalculator.ui.theme.inductor_green
 import com.brandoncano.inductancecalculator.ui.theme.textStyleBody
@@ -232,7 +232,7 @@ private fun DropdownItemView(item: DropdownItem, onClick: () -> Unit) {
 @AppComponentPreviews
 @Composable
 private fun CustomDropdownRowPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         val item1 = DropdownItem(name = "Item 1", value = "Value 1")
         Column {
             DropdownItemView(item1) { }
@@ -251,7 +251,7 @@ private fun CustomDropdownPreview() {
     val item5 = DropdownItem(name = "Item 5", value = "Value 5")
     val item6 = DropdownItem(name = "Item 6", value = "Value 6")
     val list = listOf(item1, item2, item3, item4, item5, item6)
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         Column {
             ImageTextDropDownMenu(Modifier, R.string.hint_band_1, "", list) { }
             ImageTextDropDownMenu(Modifier, R.string.hint_band_1, "Red", list) { }
@@ -262,7 +262,7 @@ private fun CustomDropdownPreview() {
 @AppComponentPreviews
 @Composable
 private fun TextDropdownRowPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         val item1 = "unit"
         Column {
             TextDropDownItemView(item1) { }
@@ -274,7 +274,7 @@ private fun TextDropdownRowPreview() {
 @AppComponentPreviews
 @Composable
 private fun TextDropdownPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         val list = listOf("item1", "item2", "item3", "item4", "item5", "item6")
         Column {
             AppDropDownMenu(Modifier, R.string.hint_units, "", list) { }

@@ -31,7 +31,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.brandoncano.inductancecalculator.R
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.textStyleTitle
 
 @Composable
@@ -106,7 +106,7 @@ private fun BottomShadow(alpha: Float = 0.1f, height: Dp = 4.dp) {
 @AppComponentPreviews
 @Composable
 private fun TitleTopAppBarPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         AppTopAppBar("TopAppBar")
     }
 }
@@ -116,7 +116,7 @@ private fun TitleTopAppBarPreview() {
 private fun MenuTopAppBarPreview() {
     val interactionSource = remember { MutableInteractionSource() }
     val showMenu = remember { mutableStateOf(false) }
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         AppMenuTopAppBar("MenuTopAppBar", interactionSource, showMenu) {
 //            ClearSelectionsMenuItem { }
         }

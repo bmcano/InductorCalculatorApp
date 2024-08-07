@@ -27,7 +27,7 @@ import com.brandoncano.inductancecalculator.model.ctv.InductorCtv
 import com.brandoncano.inductancecalculator.ui.composables.AppCard
 import com.brandoncano.inductancecalculator.ui.composables.AppComponentPreviews
 import com.brandoncano.inductancecalculator.ui.composables.DrawContent
-import com.brandoncano.inductancecalculator.ui.theme.InductanceCalculatorTheme
+import com.brandoncano.inductancecalculator.ui.theme.InductorCalculatorTheme
 import com.brandoncano.inductancecalculator.ui.theme.iconGray
 import com.brandoncano.inductancecalculator.ui.theme.textStyleHeadline
 import com.brandoncano.inductancecalculator.ui.theme.textStyleSubhead
@@ -138,7 +138,7 @@ fun FiveBandInductorInfo() {
 @AppComponentPreviews
 @Composable
 private fun InductorLayoutsPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

@@ -89,7 +89,7 @@ fun TextStyle.iconGray() = this.merge(
 @AppComponentPreviews
 @Composable
 private fun TextStylePreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         Column(
             modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -129,7 +129,7 @@ private fun TextStylePreview() {
 @AppComponentPreviews
 @Composable
 private fun TextStyleColorsPreview() {
-    InductanceCalculatorTheme {
+    InductorCalculatorTheme {
         Column(
             modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)

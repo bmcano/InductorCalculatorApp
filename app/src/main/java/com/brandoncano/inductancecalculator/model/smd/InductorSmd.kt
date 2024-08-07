@@ -1,5 +1,7 @@
 package com.brandoncano.inductancecalculator.model.smd
 
+import com.brandoncano.inductancecalculator.util.formatInductance
+
 data class InductorSmd(
     var code: String = "",
     var tolerance: String = "",
@@ -8,8 +10,8 @@ data class InductorSmd(
         return code.length < 3
     }
 
-//    override fun toString(): String {
-//        val resistance = this.formatResistance()
-//        return "Code: $code\nResistance: $resistance"
-//    }
+    override fun toString(): String {
+        val inductance = this.formatInductance()
+        return "$code\n$inductance"
+    }
 }
