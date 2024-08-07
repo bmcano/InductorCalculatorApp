@@ -53,10 +53,10 @@ fun SmdScreen(
     context: Context,
     navController: NavController,
     viewModel: InductorSmdViewModel,
-    smdResistor: LiveData<InductorSmd>
+    smdInductor: LiveData<InductorSmd>
 ) {
     Surface(modifier = Modifier.fillMaxSize()) {
-        ContentView(context, navController, viewModel, smdResistor)
+        ContentView(context, navController, viewModel, smdInductor)
     }
 }
 
@@ -65,13 +65,13 @@ private fun ContentView(
     context: Context,
     navController: NavController,
     viewModel: InductorSmdViewModel,
-    smdResistor: LiveData<InductorSmd>
+    smdInductor: LiveData<InductorSmd>
 ) {
     val focusManager = LocalFocusManager.current
     val interactionSource = remember { MutableInteractionSource() }
     val showMenu = remember { mutableStateOf(false) }
     var reset by remember { mutableStateOf(false) }
-    val inductor by smdResistor.observeAsState(InductorSmd())
+    val inductor by smdInductor.observeAsState(InductorSmd())
     var code by remember { mutableStateOf(inductor.code) }
     var tolerance by remember { mutableStateOf(inductor.tolerance) }
     var isError by remember { mutableStateOf(false) }

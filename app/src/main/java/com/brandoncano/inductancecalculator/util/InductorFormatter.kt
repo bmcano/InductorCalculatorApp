@@ -28,8 +28,8 @@ object InductorFormatter {
 
         // remove decimal and check leading zeros
         val numberBands = arrayOf(0, 0, 0)
-        val formattedResistance = checkLeadingZeros(String.format(LOCALE, "%.2f", inductDouble))
-        formattedResistance.forEachIndexed { index, digit ->
+        val formattedInductance = checkLeadingZeros(String.format(LOCALE, "%.2f", inductDouble))
+        formattedInductance.forEachIndexed { index, digit ->
             // if a invalid character makes its way through, set to -1 for a blank band
             if (index < 3) numberBands[index] = digit.digitToIntOrNull() ?: -1
         }

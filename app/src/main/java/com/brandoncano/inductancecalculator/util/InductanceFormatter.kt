@@ -35,7 +35,7 @@ object InductanceFormatter {
         val decimalPrecision = when {
             noDecimal -> "%.0f"
             band3 == Colors.SILVER -> "%.2f"
-            else -> "%.1f" // check precisions
+            else -> "%.1f"
         }
         return "${decimalPrecision.format(inductance)} $units"
     }

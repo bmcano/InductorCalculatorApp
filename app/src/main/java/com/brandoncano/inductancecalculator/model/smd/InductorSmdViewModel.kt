@@ -33,6 +33,6 @@ class InductorSmdViewModel(context: Context): ViewModel() {
     }
 
     fun saveInductorValues(inductor: InductorSmd) {
-        repository.saveResistor(inductor)
+        repository.saveInductor(inductor)
     }
 }

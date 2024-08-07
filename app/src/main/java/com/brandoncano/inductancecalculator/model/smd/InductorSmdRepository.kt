@@ -28,7 +28,7 @@ class InductorSmdRepository(context: Context) {
         return InductorSmd(code, tolerance)
     }
 
-    fun saveResistor(inductor: InductorSmd) {
+    fun saveInductor(inductor: InductorSmd) {
         SharedPreferences.CODE_INPUT_SMD.saveData(application, inductor.code)
         SharedPreferences.TOLERANCE_DROPDOWN_SMD.saveData(application, inductor.tolerance)
     }
