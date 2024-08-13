@@ -86,8 +86,6 @@ private val darkColorScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDark,
 )
 
-
-
 @Composable
 fun InductorCalculatorTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
